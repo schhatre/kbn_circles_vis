@@ -6,6 +6,7 @@ define(function (require) {
     var formatNumber = d3.format(',.0f');
 
     module.controller('KbnCirclesVisController', function ($scope, $element, $rootScope, Private) {
+        console.log("Start Process");
 
         var circlesAggResponse = Private(require('./lib/agg_response'));
 
