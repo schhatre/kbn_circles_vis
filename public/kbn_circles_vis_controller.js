@@ -29,6 +29,8 @@ define(function (require) {
         .value(function(d) { return d.size; });
 
         var _buildVis = function (data) {
+             console.log("Build Vis");
+             console.log(data);
 
             if (!data.children.length) return;
 
@@ -106,13 +108,18 @@ define(function (require) {
         }
 
         var _render = function (data) {
+            console.log("Render Vis");
+             console.log(data);
             d3.select(svgRoot).selectAll('svg').remove();
+
             _buildVis(data.children);
         };
 
         $scope.$watch('esResponse', function (resp) {
             if (resp) {
                 var chartData = circlesAggResponse($scope.vis, resp);
+                console.log("Char Data");
+                console.log(chartData);
                 _render(chartData);
             }
         });
